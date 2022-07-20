@@ -1,0 +1,35 @@
+* {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --white: white;
+    --red: rgb(177, 71, 71);
+    --blue: rgb(48, 48, 182);
+}
+
+header {
+    text-align: center;
+    background-color: var(--red);
+    color: var(--white);
+    height: 100px;
+}
+
+.card {
+    height: 300px;
+    width: 250px;
+    margin: 10px;
+    text-align: left;
+    position: relative;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+
+.card-header {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 5px;
+}
+
+h2 , h3 {
+    padding-left: 5px;
+}

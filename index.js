@@ -7,7 +7,7 @@ const generateMarkdown = require ('./utils/generateMarkdown');
 const promptUser = () => {
 return inquirer.prompt([
     {
-        type: 'name',
+        type: 'input',
         name: 'employeeName',
         message: 'What is your name?',
     },
@@ -35,17 +35,34 @@ return inquirer.prompt([
     ]);
 };
   
-const generateHTML = ({ name, location, github, linkedin }) =>
+const generateHTML = ({ employeeName, employeeID, email, officeNumber, title }) =>
     `<!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="">
-    <title>Document</title>
-  </head>
-  <body>
-  </body>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="./styles.css">
+      <title>My Team</title>
+    </head>
+    <header>
+      <h1>My Team</h1>
+    </header>
+    <body>
+      <div class="card-container">
+          <div class="card">
+              <div class="card-header">
+                  <h2>${employeeName}</h2>
+                  <h3>${title}</h3>
+              </div>
+              <ul>
+                  <li>ID: ${employeeID}</li>
+                  <li>ON: ${officeNumber}</li>
+                  <li>email: ${email}</li>
+              </ul>
+          </div>
+      </div>
+  
+    </body>
   </html>`;
   
   // Bonus using writeFileSync as a promise

@@ -30,6 +30,10 @@ header {
     padding: 5px;
 }
 
+.card-container {
+    display: flex;
+}
+
 h2 , h3 {
     padding-left: 5px;
 }
